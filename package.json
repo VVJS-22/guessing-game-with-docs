@@ -1,4 +1,11 @@
 {
+  "name": "guessing-game",
+  "version": "1.0.0",
+  "description": "A simple number gussing game",
+  "main": "src/index.js",
+  "repository": "https://github.com/VVJS-22/guessing-game-with-docs.git",
+  "author": "VVJS-22 <jayeshsugumaran@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "docdash": "^2.0.1"
   }

@@ -1,3 +1,18 @@
 #number {
     margin-bottom: 10px;
 }
+
+div {
+    margin-bottom: 10px;
+    border-bottom: 1px solid;
+    padding: 10px 0;
+    width: fit-content;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}

@@ -2,7 +2,6 @@
 
 let randomNumber = getRandomNumber(); // generate initial randomNumber
 let remainingChances = 5; // initialize number of chances
-let isWin = 0; // set flag to find if the user is won or not
 
 /**
  * Helps to generate a random number between 1 and 100.
@@ -23,8 +22,7 @@ function addHistory(guess, range) {
         document.querySelector("#history").innerText += `You guessed ${guess}, ${range}.\n`
     } else {
         document.querySelector("#history").innerText += `You guessed ${guess}.\n`
-    }
-    
+    } 
 }
 
 /**
@@ -69,8 +67,8 @@ function enableInput() {
  * A void function which reset the game onpress keyR
  */
 void function resetGameOndownR() {
-    document.addEventListener("keydown", ({key}) => {
-        if (key === 'r') resetGame();
+    document.addEventListener("keydown", ({code}) => {
+        if (code === 'KeyR') resetGame();
     })
 }()
 
@@ -82,14 +80,13 @@ function checkNumber(number) {
     let numberRange = ''; // initialize number range to empty string at every function call.
     if (remainingChances > 0) {
         number = +number // convert number param to Number type (suppose it isn't).
-        if (!isWin && number === randomNumber) {
+        if (number === randomNumber) {
             disableInput();
             remainingChances = 0; // If user won, remainingChances would be left.
-            isWin = 1;
             setGameStatus("You Won, reset game to restart"); 
         } else if ((remainingChances === 1) && (number !== randomNumber)) {
-            setGameStatus(`GAME OVER, reset game to restart. My guess is ${randomNumber}`);
             disableInput();
+            setGameStatus(`GAME OVER, reset game to restart. My guess is ${randomNumber}`);
         } else if (number < randomNumber) {
             numberRange = "Your guess is too low";
         } else {
